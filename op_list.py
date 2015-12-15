@@ -37,10 +37,11 @@ def create_list_of_price(list_of_link):
     i = 0
     while i< len(list_of_link):
         try:
-            time.sleep(random.randint(4,7))
+            time.sleep(random.randint(10,15))
             html_source = urllib2.urlopen(list_of_link[i][2]).read()
             list_of_price.append([list_of_link[i][0]]+[list_of_link[i][1]]+filter.html_source(html_source))
         except:
+            message_sender.send('Probably some error loading the link')
             pass
         i+=1
     return list_of_price

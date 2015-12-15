@@ -32,7 +32,7 @@ def list_of_price(no_filtered_list):
     py6_price=[]
     newzel_dol_price=[]
     canadian_dollar=[]
-    bri_pound_price=[]
+    bri_pound=[]
     usd_price=[]
     bra_dollars_price=[]
     lir_turc_price=[]
@@ -41,6 +41,11 @@ def list_of_price(no_filtered_list):
     cor_swe_price=[]
     swiss_franc_price=[]
     ho_ko_dollar=[]
+    rupiah=[]
+    col_dollar=[]
+    pound=[]
+    s_cor_won=[]
+
     for item in no_filtered_list:
         if '--' in item:
             item=item.replace('--','').replace(' ','')
@@ -50,10 +55,12 @@ def list_of_price(no_filtered_list):
             newzel_dol_price.append(item.replace('NZ$','').replace(' ',''))
         elif 'HK$' in item:
             newzel_dol_price.append(item.replace('HK$','').replace(' ',''))
+        elif 'COL' in item:
+            col_dollar.append(item.replace('COL','').replace(' ','').replace('$','').replace('.',''))
         elif 'CHF' in item:
             swiss_franc_price.append(item.replace('CHF','').replace(' ',''))
         elif '\xc2\xa3' in item:
-            bri_pound_price.append(item.replace('\xc2\xa3','').replace(' ',''))
+            pound.append(item.replace('\xc2\xa3','').replace(' ',''))
         elif 'CDN$' in item:
             canadian_dollar.append(item.replace('CDN$','').replace(' ',''))
         elif 'USD' in item:
@@ -67,21 +74,29 @@ def list_of_price(no_filtered_list):
         elif 'TL' in item:
             lir_turc_price.append(item.replace('TL','').replace(' ',''))
         elif '\xc2\xa5' in item:
-            yen_price.append(item.replace('\xc2\xa5','').replace(' ',''))
+            yen_price.append(item.replace('\xc2\xa5','').replace(' ','').replace(',',''))
         elif 'kr' in item:
             cor_swe_price.append(item.replace('kr','').replace(' ',''))
+        elif '฿' in item:
+            bri_pound.append(item.replace('฿','').replace(' ',''))
+        elif 'Rp' in item:
+            rupiah.append(item.replace('Rp','').replace(' ',''))
+        elif '₩' in item:
+            s_cor_won.append(item.replace('₩','').replace(' ','').replace(',',''))
         elif '$' in item:
             usd_price.append(item.replace('$','').replace(' ',''))
-            message_sender.send('New dollar currency')
+            message_sender.send('new dollar currency'+str(item))
         else:
              message_sender.send('New match ' +str(item))
 
     price=convert_price.py6_to_eur(py6_price)+convert_price.usd_to_eur(usd_price)+\
     convert_price.to_float(eur_price)+convert_price.newzel_dollars_to_eur(newzel_dol_price)+\
-    convert_price.can_dollars_to_eur(canadian_dollar)+convert_price.bri_pound_to_eur(bri_pound_price)+\
+    convert_price.can_dollars_to_eur(canadian_dollar)+convert_price.pound_to_eur(pound)+\
     convert_price.bra_dollars_to_eur(bra_dollars_price)+convert_price.sig_dollars_to_eur(sig_dollar)+\
     convert_price.lir_turc_to_eur(lir_turc_price)+convert_price.yen_to_eur(yen_price)+\
     convert_price.cor_swe_to_eur(cor_swe_price)+convert_price.swiss_franc_to_eur(swiss_franc_price)+\
-    convert_price.ho_ko_dollar_to_eur(ho_ko_dollar)
+    convert_price.ho_ko_dollar_to_eur(ho_ko_dollar)+convert_price.rupiah_to_eur(rupiah)+\
+    convert_price.col_pes_to_eur(col_dollar)+convert_price.bri_puond_to_eur(bri_pound)+\
+    convert_price.s_cor_won_to_eur(s_cor_won)
 
     return price

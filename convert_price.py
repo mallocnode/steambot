@@ -23,10 +23,10 @@ def ho_ko_dollar_to_eur(values):
 
         return new_values
 
-#bri_pound_to_eur take a list of
+#pound_to_eur take a list of
 #values and: convert it in float and €
 
-def bri_pound_to_eur(values):
+def pound_to_eur(values):
 
         new_values=[]
         if len(values)<1:
@@ -35,11 +35,31 @@ def bri_pound_to_eur(values):
         try:
             values=to_float(values)
         except:
-            print 'Error in bri_pound_to_eur.'+r'The values in the list can\'t be converted'
+            print 'Error in pound_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
             new_values.append(float('%.2f' % float(item*1.38653389)))
+
+        return new_values
+
+#s_cor_won_to_eur take a list of
+#values and: convert it in float and €
+
+def s_cor_won_to_eur(values):
+
+        new_values=[]
+        if len(values)<1:
+            return values
+        #convert to float and handle errors
+        try:
+            values=to_float(values)
+        except:
+            print 'Error in s_cor_won_to_eur.'+r'The values in the list can\'t be converted'
+
+        #create new list with eur values
+        for item in values:
+            new_values.append(float('%.2f' % float(item*0.00076643954)))
 
         return new_values
 
@@ -84,6 +104,74 @@ def newzel_dollars_to_eur(values):
         #create new list with eur values
         for item in values:
             new_values.append(float('%.2f' % float(item*0.617988)))
+
+        return new_values
+
+#rupiah_to_eur take a list of
+#values and: convert it in float and €
+
+def rupiah_to_eur(values):
+
+        new_values=[]
+
+        if len(values)<1:
+            return values
+
+        #convert to float and handle errors
+        try:
+            values=to_float(values)
+        except :
+            print 'Error in rupiah_to_eur.'+r'The values in the list can\'t be converted'
+
+        #create new list with eur values
+        for item in values:
+            new_values.append(float('%.2f' % float(item*0.00028)))
+
+        return new_values
+
+
+#colo_pes_to_eur take a list of
+#values and: convert it in float and €
+
+def col_pes_to_eur(values):
+
+        new_values=[]
+
+        if len(values)<1:
+            return values
+
+        #convert to float and handle errors
+        try:
+            values=to_float(values)
+        except :
+            print 'Error in col_pes_to_eur.'+r'The values in the list can\'t be converted'
+
+
+        #create new list with eur values
+        for item in values:
+            new_values.append(float('%.2f' % float(item*0.00027)))
+
+        return new_values
+
+#bri_puond_to_eur take a list of
+#values and: convert it in float and €
+
+def bri_puond_to_eur(values):
+
+        new_values=[]
+
+        if len(values)<1:
+            return values
+
+        #convert to float and handle errors
+        try:
+            values=to_float(values)
+        except :
+            print 'Error in bri_puond_to_eur.'+r'The values in the list can\'t be converted'
+
+        #create new list with eur values
+        for item in values:
+            new_values.append(float('%.2f' % float(item*0.0251015736)))
 
         return new_values
 
@@ -148,9 +236,10 @@ def yen_to_eur(values):
         except:
             print 'Error in yen_to_eur.'+r'The values in the list can\'t be converted'
 
+
         #create new list with eur values
         for item in values:
-            new_values.append(float('%.2f' % float(item*0.14)))
+            new_values.append(float('%.2f' % float(item*0.00753241992)))
 
         return new_values
 
@@ -274,8 +363,11 @@ def to_float(string_list):
         return string_list
 
     i=0
+
     while i<len(string_list):
-        string_list[i]=float(string_list[i].replace(',','.'))
+
+        string_list[i]=string_list[i].replace(',','.')
+        string_list[i]=float(string_list[i])
         i+=1
 
     return string_list

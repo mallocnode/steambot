@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import sys, time,random
 import op_list
-
+import message_sender
 
 
 def main():
@@ -19,7 +19,7 @@ def main():
             price=op_list.create_list_of_price(op_list.read_file(file1))
             op_list.check_threshold(file2,price)
             op_list.save_price(file2,price)
-            time.sleep(random.randint(250,350))
+            time.sleep(random.randint(300,350))
         except:
             message_sender.send('Some error in main')
 
