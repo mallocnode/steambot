@@ -72,6 +72,7 @@ def list_of_price(no_filtered_list):
             cor_swe_price.append(item.replace('kr','').replace(' ',''))
         elif '$' in item:
             usd_price.append(item.replace('$','').replace(' ',''))
+            message_sender.send('New dollar currency')
         else:
              message_sender.send('New match ' +str(item))
 

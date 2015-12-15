@@ -15,11 +15,13 @@ def main():
     # check_threshold function
     op_list.save_price(file2,op_list.create_list_of_price(op_list.read_file(file1)))
     while True:
-
-        price=op_list.create_list_of_price(op_list.read_file(file1))
-        op_list.check_threshold(file2,price)
-        op_list.save_price(file2,price)
-        time.sleep(random.randint(250,350))
+        try:
+            price=op_list.create_list_of_price(op_list.read_file(file1))
+            op_list.check_threshold(file2,price)
+            op_list.save_price(file2,price)
+            time.sleep(random.randint(250,350))
+        except:
+            message_sender.send('Some error in main')
 
 
 if __name__ == '__main__':
