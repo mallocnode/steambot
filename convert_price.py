@@ -239,9 +239,33 @@ def yen_to_eur(values):
 
         #create new list with eur values
         for item in values:
-            new_values.append(float('%.2f' % float(item*0.00753241992)))
+            new_values.append(float('%.2f' % float(item*0.14074)))
+        message_sender.send('Fucking cinese currency')
+        return new_values
+
+#mal_rig_to_eur take a list of
+#values and: convert it in float and €
+
+def mal_rig_to_eur(values):
+
+        new_values=[]
+
+        if len(values)<1:
+            return values
+
+        #convert to float and handle errors
+        try:
+            values=to_float(values)
+        except:
+            print 'Error in mal_rig_to_eur.'+r'The values in the list can\'t be converted'
+
+
+        #create new list with eur values
+        for item in values:
+            new_values.append(float('%.2f' % float(item*0.211740)))
 
         return new_values
+
 
 #bra_dollars_to_eur take a list of
 #values and: convert it in float and €
@@ -327,7 +351,7 @@ def sig_dollars_to_eur(values):
 
         #create new list with eur values
         for item in values:
-            new_values.append(float('%.2f' % float(item*0.65197241)))
+            new_values.append(float('%.2f' % float(item*0.11753)))
 
         return new_values
 

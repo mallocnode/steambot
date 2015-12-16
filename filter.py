@@ -45,6 +45,7 @@ def list_of_price(no_filtered_list):
     col_dollar=[]
     pound=[]
     s_cor_won=[]
+    mal_rig=[]
 
     for item in no_filtered_list:
         if '--' in item:
@@ -63,6 +64,8 @@ def list_of_price(no_filtered_list):
             pound.append(item.replace('\xc2\xa3','').replace(' ',''))
         elif 'CDN$' in item:
             canadian_dollar.append(item.replace('CDN$','').replace(' ',''))
+        elif 'RM' in item:
+            mal_rig.append(item.replace('RM','').replace(' ',''))
         elif 'USD' in item:
             usd_price.append(item.replace('USD','').replace('$','').replace(' ',''))
         elif '€' in item:
@@ -97,6 +100,6 @@ def list_of_price(no_filtered_list):
     convert_price.cor_swe_to_eur(cor_swe_price)+convert_price.swiss_franc_to_eur(swiss_franc_price)+\
     convert_price.ho_ko_dollar_to_eur(ho_ko_dollar)+convert_price.rupiah_to_eur(rupiah)+\
     convert_price.col_pes_to_eur(col_dollar)+convert_price.bri_puond_to_eur(bri_pound)+\
-    convert_price.s_cor_won_to_eur(s_cor_won)
+    convert_price.s_cor_won_to_eur(s_cor_won)+convert_price.mal_rig_to_eur(mal_rig)
 
     return price
