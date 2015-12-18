@@ -1,4 +1,4 @@
-#!/usr/bin/python -tt
+#!/usr/bin/python2 -tt
 # -*- coding: utf-8 -*-
 import re
 import urllib2,filter
