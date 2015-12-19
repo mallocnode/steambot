@@ -1,4 +1,4 @@
-#!/usr/bin/env python -tt
+#!/usr/bin/env python2 -tt
 # -*- coding: utf-8 -*-
 import telebot
 
