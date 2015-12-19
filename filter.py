@@ -1,4 +1,4 @@
-#!/usr/bin/env python2 -tt
+#!/usr/bin/python -tt
 # -*- coding: utf-8 -*-
 import re
 import convert_price, message_sender
@@ -46,6 +46,7 @@ def list_of_price(no_filtered_list):
     pound=[]
     s_cor_won=[]
     mal_rig=[]
+    clp=[]
 
     for item in no_filtered_list:
         if '--' in item:
@@ -54,6 +55,8 @@ def list_of_price(no_filtered_list):
             py6_price.append(item.replace('p\xd1\x83\xd0\xb1.','').replace(' ',''))
         elif 'NZ$' in item:
             newzel_dol_price.append(item.replace('NZ$','').replace(' ',''))
+        elif 'CLP$' in item:
+            newzel_dol_price.append(item.replace('CLP$','').replace(' ','').replace('.',''))
         elif 'HK$' in item:
             newzel_dol_price.append(item.replace('HK$','').replace(' ',''))
         elif 'COL' in item:
@@ -100,6 +103,6 @@ def list_of_price(no_filtered_list):
     convert_price.cor_swe_to_eur(cor_swe_price)+convert_price.swiss_franc_to_eur(swiss_franc_price)+\
     convert_price.ho_ko_dollar_to_eur(ho_ko_dollar)+convert_price.rupiah_to_eur(rupiah)+\
     convert_price.col_pes_to_eur(col_dollar)+convert_price.bri_puond_to_eur(bri_pound)+\
-    convert_price.s_cor_won_to_eur(s_cor_won)+convert_price.mal_rig_to_eur(mal_rig)
+    convert_price.s_cor_won_to_eur(s_cor_won)+convert_price.mal_rig_to_eur(mal_rig)+convert_price.col_pes_to_eur(clp)
 
     return price

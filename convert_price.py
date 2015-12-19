@@ -15,7 +15,7 @@ def ho_ko_dollar_to_eur(values):
         try:
             values=to_float(values)
         except:
-            print('Error in ho_ko_dollar_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in ho_ko_dollar_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
@@ -35,7 +35,7 @@ def pound_to_eur(values):
         try:
             values=to_float(values)
         except:
-            print('Error in pound_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in pound_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
@@ -55,11 +55,31 @@ def s_cor_won_to_eur(values):
         try:
             values=to_float(values)
         except:
-            print('Error in s_cor_won_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in s_cor_won_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
             new_values.append(float('%.2f' % float(item*0.00076643954)))
+
+        return new_values
+
+#cil_pes_to_eur take a list of
+#values and: convert it in float and €
+
+def s_cor_won_to_eur(values):
+
+        new_values=[]
+        if len(values)<1:
+            return values
+        #convert to float and handle errors
+        try:
+            values=to_float(values)
+        except:
+            print 'Error in cil_pes_to_eur.'+r'The values in the list can\'t be converted'
+
+        #create new list with eur values
+        for item in values:
+            new_values.append(float('%.2f' % float(item*0.0013)))
 
         return new_values
 
@@ -77,7 +97,7 @@ def can_dollars_to_eur(values):
         try:
             values=to_float(values)
         except :
-            print('Error in can_dollars_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in can_dollars_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
@@ -99,7 +119,7 @@ def newzel_dollars_to_eur(values):
         try:
             values=to_float(values)
         except :
-            print('Error in newzel_dollars_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in newzel_dollars_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
@@ -121,7 +141,7 @@ def rupiah_to_eur(values):
         try:
             values=to_float(values)
         except :
-            print('Error in rupiah_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in rupiah_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
@@ -144,7 +164,7 @@ def col_pes_to_eur(values):
         try:
             values=to_float(values)
         except :
-            print('Error in col_pes_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in col_pes_to_eur.'+r'The values in the list can\'t be converted'
 
 
         #create new list with eur values
@@ -167,7 +187,7 @@ def bri_puond_to_eur(values):
         try:
             values=to_float(values)
         except :
-            print('Error in bri_puond_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in bri_puond_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
@@ -189,7 +209,7 @@ def cor_swe_to_eur(values):
         try:
             values=to_float(values)
         except :
-            print('Error in cor_swe_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in cor_swe_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
@@ -211,7 +231,7 @@ def usd_to_eur(values):
         try:
             values=to_float(values)
         except :
-            print('Error in usd_to_eur.'+'The values in the list can\'t be converted')
+            print 'Error in usd_to_eur.'+'The values in the list can\'t be converted'
             message_sender.send('Error in Usd_to_eur. Probably a new value')
 
         #create new list with eur values
@@ -234,7 +254,7 @@ def yen_to_eur(values):
         try:
             values=to_float(values)
         except:
-            print('Error in yen_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in yen_to_eur.'+r'The values in the list can\'t be converted'
 
 
         #create new list with eur values
@@ -257,7 +277,7 @@ def mal_rig_to_eur(values):
         try:
             values=to_float(values)
         except:
-            print('Error in mal_rig_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in mal_rig_to_eur.'+r'The values in the list can\'t be converted'
 
 
         #create new list with eur values
@@ -281,7 +301,7 @@ def bra_dollars_to_eur(values):
         try:
             values=to_float(values)
         except:
-            print('Error in bra_dollars_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in bra_dollars_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
@@ -303,7 +323,7 @@ def swiss_franc_to_eur(values):
         try:
             values=to_float(values)
         except:
-            print('Error in swiss_franc_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in swiss_franc_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
@@ -325,7 +345,7 @@ def lir_turc_to_eur(values):
         try:
             values=to_float(values)
         except:
-            print('Error in lir_turc_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in lir_turc_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
@@ -347,7 +367,7 @@ def sig_dollars_to_eur(values):
         try:
             values=to_float(values)
         except:
-            print('Error in sig_dollars_to_eur.'+r'The values in the list can\'t be converted')
+            print 'Error in sig_dollars_to_eur.'+r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
@@ -369,7 +389,7 @@ def py6_to_eur(values):
         try:
             values=to_float(values)
         except:
-            print('Error in py6_to_eur.',r'The values in the list can\'t be converted')
+            print 'Error in py6_to_eur.',r'The values in the list can\'t be converted'
 
         #create new list with eur values
         for item in values:
