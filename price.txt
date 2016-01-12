@@ -1,10 +1,1 @@
-pip install pyTelegramBotAPI
-
-for python 2.7 pacman -S python2-pip
-
-$ git clone https://github.com/eternnoir/pyTelegramBotAPI.git
-$ cd pyTelegramBotAPI
-$ python setup.py install
-
-
-pacman -S opencv
+.
