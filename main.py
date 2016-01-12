@@ -1,4 +1,4 @@
-#!/usr/bin/env python2 -tt
+#!/usr/bin/python -tt
 # -*- coding: utf-8 -*-
 import sys, time,random
 import op_list
