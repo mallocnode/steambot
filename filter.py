@@ -14,8 +14,7 @@ def html_source(source):
     #take the various values in the source
     #NOTA:non tutte le valute vengono considerate
 
-    no_filtered_price=re.findall('<span class="market_listing_price market_listing_price_with_fee">\s+(.+)\t\t\t\t\t</span>',source)
-
+    no_filtered_price=re.findall('<span class="market_listing_price market_listing_price_with_fee">\s+(.+)\t\t\t\t\t</span>',source.decode('utf-8'))
     price=list_of_price(no_filtered_price)
     price=sorted(price)
 
