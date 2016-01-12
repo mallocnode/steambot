@@ -50,8 +50,8 @@ def list_of_price(no_filtered_list):
     for item in no_filtered_list:
         if '--' in item:
             item=item.replace('--','').replace(' ','')
-        if 'p\xd1\x83\xd0\xb1.' in item:
-            py6_price.append(item.replace('p\xd1\x83\xd0\xb1.','').replace(' ',''))
+        if 'p\u0443\u0431.' in item:
+            py6_price.append(item.replace('p\u0443\u0431.','').replace(' ',''))
         elif 'NZ$' in item:
             newzel_dol_price.append(item.replace('NZ$','').replace(' ',''))
         elif 'CLP$' in item:
@@ -62,8 +62,8 @@ def list_of_price(no_filtered_list):
             col_dollar.append(item.replace('COL','').replace(' ','').replace('$','').replace('.',''))
         elif 'CHF' in item:
             swiss_franc_price.append(item.replace('CHF','').replace(' ',''))
-        elif '\xc2\xa3' in item:
-            pound.append(item.replace('\xc2\xa3','').replace(' ',''))
+        elif '\u00A3' in item:
+            pound.append(item.replace('\u00A3','').replace(' ',''))
         elif 'CDN$' in item:
             canadian_dollar.append(item.replace('CDN$','').replace(' ',''))
         elif 'RM' in item:
@@ -78,8 +78,8 @@ def list_of_price(no_filtered_list):
             sig_dollar.append(item.replace('S$','').replace(' ',''))
         elif 'TL' in item:
             lir_turc_price.append(item.replace('TL','').replace(' ',''))
-        elif '\xc2\xa5' in item:
-            yen_price.append(item.replace('\xc2\xa5','').replace(' ','').replace(',',''))
+        elif '\u00A5' in item:
+            yen_price.append(item.replace('\u00A5','').replace(' ','').replace(',',''))
         elif 'kr' in item:
             cor_swe_price.append(item.replace('kr','').replace(' ',''))
         elif '฿' in item:
