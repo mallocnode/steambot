@@ -3,10 +3,10 @@
 import telebot
 
 #set bot token
-bot=telebot.TeleBot('177620498:AAEqcEe5C-33hDFY03GRXhNZbG53rsSa7wU')
+bot=telebot.TeleBot('your token here')
 
 #send the message to the bot
 
 def send(message):
-    chatid=178301470
+    chatid=00000000 #your chat id here
     bot.send_message(chatid,message)
